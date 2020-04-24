@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students data</title>
+</head>
+<body>
+    <div>
+        <h1>
+            List Instructor
+        </h1>
+        <table border>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Phone Number</th>
+                    <th colspan="4">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% buddy.forEach(element => { %>
+                    <tr>
+                        <td><%= element.id %> </td>
+                        <td><%= element.name %> </td>
+                        <td><%= element.username %> </td>
+                        <td><%= element.password %> </td>
+                        <td><%= element.email %> </td>
+                        <td><%= element.phone_number %> </td>
+                        <td><button><a href="/admin/instructor/detail/<%=element.id%>">DETAIL</a></button></td>
+                        <td><button><a href="/admin/instructor/detail/deploy/<%=element.id%>">DEPLOY</a></button></td>
+                        <td><button><a href="/">EDIT</a></button></td>
+                        <td><button><a href="/">DELETE</a></button></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
